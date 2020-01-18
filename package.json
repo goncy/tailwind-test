@@ -10,12 +10,13 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
+    "styled-components": "^5.0.0",
     "tailwindcss": "^1.1.4"
   },
   "scripts": {
-    "tailwindcss": "echo \"/*purgecss start ignore*/@tailwind base;@tailwind components;/*purgecss end ignore*/@tailwind utilities;\" | postcss -o ./public/theme.css",
-    "start": "npm run tailwindcss && react-scripts start",
-    "build": "npm run tailwindcss && react-scripts build",
+    "tailwind": "postcss src/index.css > public/theme.css",
+		"start": "npm run tailwind && react-scripts start",
+    "build": "npm run tailwind && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
